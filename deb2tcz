@@ -19,8 +19,8 @@ INPUT=${FILE##*.}
 make_tcz() {
 	
 	mkdir -p "$PKG"
-	ar p "$FILE" data.tar.gz > "$PKGDIR"/data.tar.gz
-	tar xzvf "$PKGDIR"/data.tar.gz -C "$PKG"
+	ar p "$FILE" data.tar.xz > "$PKGDIR"/data.tar.xz
+	tar xf "$PKGDIR"/data.tar.xz -C "$PKG"
 	
 	[ -d "$PKG"/usr/share/doc ] && rm -r "$PKG"/usr/share/doc
 	[ -d "$PKG"/usr/share/man ] && rm -r "$PKG"/usr/share/man
